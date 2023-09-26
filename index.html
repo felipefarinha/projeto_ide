@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./assets/favicon.png">
+
+  <!-- <link rel="icon" href="https://pyscript.net/alpha/pyscript.css" /> -->
+  <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
+
+  <title>IDE/DF</title>
+</head>
+
+<!-- <py-env>
+    - pandas
+    - numpy
+    - matplotlib
+</py-env> -->
+    <!-- - paths:
+      - /BankChurners.csv -->
+
+<body>
+  <!-- <div class="bg"></div> -->
+
+  <div id="out"></div>
+
+<!-- <py-script>
+  # import panel as pn
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+from pyodide.http import open_url
+
+url = './csv/BankChurners.csv'
+url_content = open_url(url)
+
+
+def load_data():
+    return pd.read_csv(url_content)
+
+banco = load_data()
+
+# banco.head()
+
+banco.rename(columns={'CLIENTNUM': 'cliente_ID',
+                      'Attrition_Flag': 'Flag',
+                      'Customer_Age': 'Idade',
+                      'Gender': 'Sexo',
+                      'Dependent_count': 'Número dep.',
+                      'Education_Level': 'Escolaridade',
+                      'Marital_Status': 'Estado civil',
+                      'Income_Category': 'Intervalo de renda',
+                      'Card_Category': 'Tipo de cartão'}, inplace=True)
+
+clienteAttritedCard = banco['cliente_ID'].loc[banco['Flag'] == 'Existing Customer'].count()
+
+el_output = Element("output")
+el_output.element.innerText = f'Quantidade total de cliente existente do cartão de crédito: {clienteAttritedCard}'
+
+
+</py-script> -->
+
+  <nav>
+    <div class="logo">
+      <img src="./assets/logo/df.png" alt="">
+      <h1>IDE/DF</h1>
+    </div> <!-- nav-logo -->
+
+    <div class="nav-header">
+      <ul>
+        <li><a href="http://www.transparencia.df.gov.br/" target="_blank" rel="noopener noreferrer">Transparência</a></li>
+        <li><a href="http://www.ouvidoria.df.gov.br/" target="_blank" rel="noopener noreferrer">Ouvidoria</a></li>
+        <li><a href="http://www.brasilia.df.gov.br/category/acesso-a-informacao/" target="_blank" rel="noopener noreferrer">Acesso à informação</a></li>
+        <li><a href="https://www.dodf.df.gov.br/" target="_blank" rel="noopener noreferrer">Diário Oficial</a></li>
+        <li><a href="https://www.agenciabrasilia.df.gov.br/" target="_blank" rel="noopener noreferrer">Agência Brasília</a></li>
+      </ul>
+    </div> <!-- nav-header -->
+
+    <div class="geoPortal">
+      <h1>GeoPortal | DF</h1>
+    </div> <!-- end geoPortal -->
+
+  </nav> <!-- end nav -->
+
+  <div class="container">
+    <div class="wrap-container">
+      <div class="container-left">
+        <!-- <img src="./assets/logo/ide-seduh.png" alt="ide seduh"> -->
+      </div>
+
+      <div class="container-right">
+        <h1>Infraestrutura de Dados Espaciais do Distrito Federal</h1>
+
+        <div class="navbar-menu">
+          <ul>
+            <li class="navbar_lista active"><a href="#">Início</a></li>
+            <li class="navbar_lista"><a href="#">Sobre</a></li>
+            <li class="navbar_lista"><a href="#">Legislação</a></li>
+            <li class="navbar_lista"><a href="#">Estrutura Executiva</a></li>
+            <li class="navbar_lista"><a href="#">Grupos Técnicos</a></li>
+            <li class="navbar_lista"><a href="#">Capacitação</a></li>
+            <li class="navbar_lista"><a href="#">Adesão</a></li>
+            <li class="navbar_lista"><a href="#">Dados Disponíveis</a></li>
+
+            <!--OBS: cada adição de nova aba deverá ser acompanhada de uma nova <section>:
+              <section>
+                <div class="section">
+                  <div class="wrap-nome">
+                    <div class="sumario">
+                      <div class="lista-sumario">
+                        <details>
+                          <summary>Participantes</summary>
+                          criar email ide_df
+
+                        </details>
+                      </div> <!-- end lista-sumario
+                    </div> <!-- end sumario
+                  </div> <!-- end wrap-contato
+                </div> <!-- end section
+              </section>
+              tbm deverá ser adicionado ao CSS o nome da class wrap, no caso: wrap-nome
+
+                arquivo css:
+                .wrap-inicio,
+                .wrap-sobre,
+                .wrap-legislacao,
+                .wrap-estrutura-executiva,
+                .wrap-grupo-tecnico,
+                .wrap-capacitacao,
+                .wrap-adesao,
+                .wrap-NOME
+                -->
+
+          </ul>
+        </div> <!-- end nav-bar-menu -->
+      </div> <!-- end container-right -->
+    </div> <!-- end wrap-container -->
+
+    <section>
+      <div class="section">
+        <div class="wrap-inicio">
+          <div class="wrap-section-left">
+            <a href="https://www.geoportal.seduh.df.gov.br/geoportal/" target="_blank" rel="noopener noreferrer">
+              <img class="wrap-section-left-img" src="./assets/imagens/bg-geoportal.png" alt="">
+            </a>
+              <!-- <iframe src="https://www.geoportal.seduh.df.gov.br/geoportal/" frameborder="0"></iframe> -->
+          </div> <!-- end wrap-section-left  -->
+
+          <div class="wrap-section-right">
+
+            <ul>
+              <li class="lista-lateral">
+                <a href="https://www.geoportal.seduh.df.gov.br/geoportal/" target="_blank" rel="noopener noreferrer">
+                  <img src="./assets/logo/df.png" alt=""/>
+                  <p>GEOPORTAL IDE/DF</p>
+                </a>
+              </li>
+
+              <li class="lista-lateral">
+                <a href="https://www.metadados.seduh.df.gov.br/geonetwork/srv/por/catalog.search;jsessionid=6804A5F18A4265E109F4B86028004CB7#/home" target="_blank" rel="noopener noreferrer">
+                  <img src="./assets/logo/df.png" alt=""/>
+                  <p>CATÁLOGOS DE METADADOS IDE/DF</p>
+                </a>
+              </li>
+
+              <li class="lista-lateral">
+                <a href="https://www.geoservicos.ide.df.gov.br/arcgis/rest/services/publico" target="_blank" rel="noopener  noreferrer">
+                  <img src="./assets/logo/df.png" alt=""/>
+                  <p>GEOSERVIÇOS</p>
+                </a>
+              </li>
+
+              <li class="lista-lateral">
+              <a href="https://www.ibram.df.gov.br/observatorio-da-natureza-e-desempenho-ambiental-onda/" target="_blank" rel="noopener noreferrer">
+                  <img src="./assets/logo/brasilia-ambiental crop.jpg" alt=""/>
+                  <p>BRASÍLIA AMBIENTAL</p>
+                </a>
+              </li>
+
+              <li class="lista-lateral">
+                <a href="https://atlas.caesb.df.gov.br/portal/home/" target="_blank" rel="noopener noreferrer">
+                  <img src="./assets/logo/caesb.png" alt=""/>
+                  <p>CAESB</p>
+                </a>
+              </li>
+
+              <!-- <li class="lista-lateral">
+                <a href="https://sisdia.df.gov.br/home/" target="_blank" rel="noopener noreferrer">
+                  <img src="./assets/logo/sisdia_crop.png" alt=""/>
+                  <p>SISDIA</p>
+                </a>
+              </li> -->
+
+              <li class="lista-lateral ">
+                <a href="https://www.inde.gov.br" target="_blank" rel="noopener noreferrer">
+                  <img src="./assets/logo/inde.png" alt=""/>
+                  <p>INDE</p>
+                </a>
+              </li>
+
+            </ul>
+          </div> <!-- end wrap-section-right -->
+        </div> <!-- end wrap-inicio -->
+
+        <section>
+          <!-- <div class="section_comunicados" id="section_comunicados"></div> -->
+          <div class="wrap_comunicados">
+            <div class="carousel">
+              <div class="progress-bar progress-bar--primary hide-on-desktop">
+                <div class="progress-bar__fill"></div>
+              </div>
+
+            <header class="main-post-wrapper">
+
+              <div class="slides">
+                <article class="main-post main-post--active">
+                  <div class="main-post__image">
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2019-Races/Monaco2019/McLarenMonaco19.jpg.transform/9col/image.jpg" alt="New McLaren wind tunnel 'critical' to future performance, says Tech Director Key" />
+                  </div>
+                  <div class="main-post__content">
+                    <div class="main-post__tag-wrapper">
+                      <span class="main-post__tag">News</span>
+                    </div>
+                    <h1 class="main-post__title">New McLaren wind tunnel 'critical' to future performance, says Tech Director Key</h1>
+                    <a class="main-post__link" href="#">
+                          <span class="main-post__link-text">find out more</span>
+                          <svg
+                            class="main-post__link-icon main-post__link-icon--arrow"
+                            width="37"
+                            height="12"
+                            viewBox="0 0 37 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11"
+                              stroke="white"
+                            />
+                          </svg>
+                        </a>
+                  </div>
+                </article>
+                <article class="main-post main-post--not-active">
+                  <div class="main-post__image">
+                    <img src="https://www.formula1.com/content/dam/fom-website/sutton/2019/Hungary/Saturday/1017645792-LAT-20190803-_2ST5188.jpg.transform/9col-retina/image.jpg" alt="What To Watch For in the 2019 Hungarian Grand Prix" />
+                  </div>
+                  <div class="main-post__content">
+                    <div class="main-post__tag-wrapper">
+                      <span class="main-post__tag">Video</span>
+                    </div>
+                    <h1 class="main-post__title">What To Watch For in the 2019 Hungarian Grand Prix</h1>
+                    <a class="main-post__link" href="#">
+                          <svg
+                            class="main-post__link-icon main-post__link-icon--play-btn"
+                            width="30"
+                            height="30"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle
+                              cx="10"
+                              cy="10"
+                              r="9"
+                              stroke="#8a9197"
+                              stroke-width="2"
+                            />
+                            <path d="M14 10L8 6V14L14 10Z" fill="white" />
+                          </svg>
+                          <span class="main-post__link-text">play video</span>
+                        </a>
+                  </div>
+                </article>
+                <article class="main-post main-post--not-active">
+                  <div class="main-post__image">
+                    <img src="https://www.formula1.com/content/dam/fom-website/manual/Misc/2019-Races/Austria-2019/Top3Austria2019.jpg.transform/9col-retina/image.jpg" alt="Hamilton wants harder championship fight from Leclerc and
+                        Verstappen" />
+                  </div>
+                  <div class="main-post__content">
+                    <div class="main-post__tag-wrapper">
+                      <span class="main-post__tag">News</span>
+                    </div>
+                    <h1 class="main-post__title">Hamilton wants harder championship fight from Leclerc and Verstappen
+                    </h1>
+                    <a class="main-post__link" href="#">
+                          <span class="main-post__link-text">find out more</span>
+                          <svg
+                            class="main-post__link-icon main-post__link-icon--arrow"
+                            width="37"
+                            height="12"
+                            viewBox="0 0 37 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M0 6H36.0001M36.0001 6L31.0001 1M36.0001 6L31.0001 11"
+                              stroke="white"
+                            />
+                          </svg>
+                        </a>
+                  </div>
+                </article>
+              </div>
+            </header>
+
+            <div class="posts-wrapper hide-on-mobile">
+              <article class="post post--active">
+                <div class="progress-bar">
+                  <div class="progress-bar__fill"></div>
+                </div>
+                <header class="post__header">
+                  <span class="post__tag">News</span>
+                  <p class="post__published">16 August 2019</p>
+                </header>
+                <h2 class="post__title">New McLaren wind tunnel 'critical' to future performance, says Tech Director Key</h2>
+              </article>
+              <article class="post">
+                <div class="progress-bar">
+                  <div class="progress-bar__fill"></div>
+                </div>
+                <header class="post__header">
+                  <span class="post__tag">Video</span>
+                  <p class="post__published">12 August 2019</p>
+                </header>
+                <h2 class="post__title">What To Watch For in the 2019 Hungarian Grand Prix</h2>
+              </article>
+              <article class="post">
+                <div class="progress-bar">
+                  <div class="progress-bar__fill"></div>
+                </div>
+                <header class="post__header">
+                  <span class="post__tag">News</span>
+                  <p class="post__published">08 August 2019</p>
+                </header>
+                <h2 class="post__title">Hamilton wants harder championship fight from Leclerc and Verstappen
+                </h2>
+              </article>
+            </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="section">
+        <div class="wrap-sobre">
+          <div class="sumario">
+            <p>
+              <!-- O Instituto de Desenvolvimento Econômico e Social Urbano (IDE) é um órgão público federal,
+              responsável pela gestão e desenvolvimento da infraestrutura de dados espaciais do DF. -->
+              A Infraestrutura de Dados Espaciais do Distrito Federal - IDE/DF abrange o conjunto de tecnologias, políticas, padrões e recursos humanos necessários para adquirir, processar, consolidar, distribuir, utilizar, manter e preservar a geoinformação produzida no âmbito do Distrito Federal.
+            </p>
+            <details open>
+              <summary>Sobre a IDE/DF</summary>
+              <div class="lista-sumario">
+                A <span>Infraestrutura de Dados Espaciais do Distrito Federal – IDE/DF</span> foi instituída pelo Decreto nº 37.612, de 09 de setembro de 2016 e alterado pelo <a href="./assets/docs/Decreto 40.554 Institui a IDF-DF 24-03-2020.pdf" target="_blank">Decreto Nº 40.554, de 23 de março de 2020</a> com a seguinte definição:
+                <br><Br>
+                A Infraestrutura de Dados IDE/DF abrange o conjunto de tecnologias,
+                políticas, padrões e recursos humanos necessários para adquirir,
+                processar, consolidar, distribuir, utilizar, manter e preservar a
+                geoinformação produzida no âmbito do Distrito Federal.
+                <!-- <br><br>
+                Infraestrutura de Dados Espaciais – IDE: conjunto integrado de tecnologias,
+                políticas, mecanismos e procedimentos de coordenação e monitoramento,
+                padrões e acordos, necessário para facilitar e ordenar a geração,
+                o armazenamento, o acesso, o compartilhamento, a disseminação e o
+                uso da geoinformação. -->
+
+              </div>
+
+              <div class="wrap-aBtn">
+                <a class="aBtn"></a>
+              </div>
+
+            </details>
+          </div> <!-- end sumario  -->
+                    <div class="sumario">
+            <details>
+              <summary>Objetivo</summary>
+              <div class="lista-sumario">
+                Conforme o Art. 3 do Decreto <a href="./assets/docs/Decreto 40.554 Institui a IDF-DF 24-03-2020.pdf">Nº 40.554</a>, a IDE/DF tem como principais objetivos:
+                <br><br>
+                <texto class="paragrafo">
+                <ul>
+                    <li>
+                      Promover o adequado ordenamento na geração, no armazenamento, no acesso, no compartilhamento, na
+                      disponibilização e no uso da geoinformação sobre o território e a população do Distrito Federal,
+                      aos órgãos ou entidades públicas pertencentes à Administração do Distrito Federal;</li>
+                    <li>
+                      Promover a utilização, pelas entidades participantes, dos padrões e normas definidos para a IDE/DF
+                      na produção e disponibilização das geoinformações;</li>
+                    <li>
+                      Evitar a duplicidade de ações e o desperdício de recursos na produção de geoinformações pelos órgãos da administração pública, principalmente por meio da divulgação dos metadados relativos aos dados disponíveis nas entidades e nos órgãos do Distrito Federal;</li>
+                    <li>Instrumentalizar os órgãos e entidades do Distrito Federal nos processos de planejamento e de gestão de políticas públicas e de ordenamento territorial;</li>
+                    <li>Promover a transparência ativa na divulgação das geoinformações produzidos pelas entidades participantes da IDE/DF.</li>
+                </ul>
+                </texto>
+              </div> <!-- end lista-sumario  -->
+                <div class="wrap-aBtn">
+                  <a class="aBtn"></a>
+                </div>
+            </details>
+          </div> <!-- end sumario  -->
+
+
+          <div class="sumario">
+            <details>
+              <summary>Governança da IDE/DF</summary>
+              <div class="lista-sumario">
+
+                  <span> IDE/DF é formada por:</span>
+                <ul>
+                    <li><p>Estrutura Tecnológica</p></li>
+
+                        <texto class="paragrafo">A estrutura tecnológica da IDE/DF é constituída por:
+                        Conjunto de bancos e servidores de dados, geoserviços e de metadados de cada entidade
+                        participante da IDE/DF; Catálogo central de metadados e geoserviços;
+                        Geoportal, que garanta o acesso à geoinformação, seus metadados e serviços relacionados;
+                        Conjunto de tecnologias que garanta o trânsito da informação entre os servidores de dados
+                        setoriais, o catálogo central de metadados e o geoportal.</texto class="paragrafo">
+
+                    <li><p>Estrutura Executiva</p></li>
+                <!-- </ul> -->
+                        <texto class="paragrafo">A estrutura executiva da IDE/DF tem as seguintes competências e atribuições:
+                          <br><br>
+                  <ul>
+                        <li>Propor, analisar e deliberar sobre a política de geoinformações do Distrito Federal;</li>
+                        <li>Definir e revisar as normas e padrões que regem a produção, aquisição, armazenamento e
+                        compartilhamento das geoinformações no âmbito da IDE/DF;</li>
+                        <li>Estabelecer os procedimentos, avaliar e emitir parecer orientativo, nos termos do inciso III do
+                        art. 3º deste Decreto, para a produção de geoinformações no âmbito da Administração Pública do Distrito
+                        Federal;</li>
+                        <li>Garantir que os dados e geoserviços sejam implantados e mantidos em conformidade com os Padrões
+                        de Interoperabilidade de Governo Eletrônico;</li>
+                        <li>Dar suporte para implementação do exposto no inciso I do art. 5º aos órgãos ou entidades da
+                        Administração Pública do Distrito Federal que comprovarem não possuir capacidade técnica para
+                        implementá-los;</li>
+                        <li>Aprovar a participação das entidades privadas e a publicação das suas geoinformações;</li>
+                        <li>Acompanhar, analisar, propor revisões e solucionar as dúvidas relativas à IDE/DF;</li>
+                        <li>Representar o Governo do Distrito Federal em fóruns nacionais e internacionais na temática de
+                        geoinformações;</li>
+                        <li>Estabelecer acordos de cooperação e convênios nacionais e internacionais tendo como objeto o
+                        desenvolvimento das geoinformações e fortalecimento da IDE/DF;</li>
+                        <li>Resolver casos omissos pertinentes a IDE/DF.</li>
+                      </li>
+                  </ul>
+                    A estrutura executiva de que trata o caput do art. 6º é composta por: I - um Comitê Gestor; II - uma
+                    Secretaria Executiva; e III - Grupos Técnicos Executivos.</texto>
+                  </ul>
+
+              </div> <!-- end lista-sumario  -->
+            </details>
+          </div> <!-- end sumario  -->
+
+
+          <div class="sumario">
+            <details>
+              <summary>Compartilhamento de dados</summary>
+              <div class="lista-sumario">
+                <ul>
+                    <li>O compartilhamento e disponibilização, na IDE/DF, das geoinformações de interesse do governo e seus metadados é obrigatório para todos os órgãos e entidades do Distrito Federal, e para as entidades prestadoras e concessionárias privadas que fornecem serviços públicos, observando as eventuais restrições impostas a publicação e acesso aos dados geoespaciais definidas pelos órgãos produtores.
+                    </li>
+                    <li>As entidades privadas, não prestadoras de serviços públicos, podem participar da IDE/DF como fornecedores de geoinformação de interesse público, desde que formalizem seu interesse e sigam as normas e padrões da IDE/DF.
+                    </li>
+                    <li>O compartilhamento e disponibilização, na IDE/DF, se dará por meio de um <a id="click">Termo de Adesão.</a></li>
+                </ul>
+              </div> <!-- end lista-sumario  -->
+
+            </details>
+          </div> <!-- end sumario  -->
+
+          <div class="sumario">
+            <details>
+              <summary>A responsabilidade pelos dados publicados</summary>
+              <div class="lista-sumario">
+                <p>Conforme o Art. 10ª do Decreto Nº 40.554:</p>
+
+                <ul>
+                  <li>A gestão dos dados, geoserviços e de metadados, e a veracidade, precisão e corretude da
+                    geoinformação produzida é de inteira responsabilidade de cada entidade pública ou privada participante.</li>
+                  <li>Cada entidade participante é responsável por disponibilizar seus metadados ao catálogo central de
+                    metadados da IDE/DF.</li>
+                  <li>Eventuais restrições impostas à publicação e acesso as geoinformações são de responsabilidade dos
+                    órgãos
+                    produtores.</li>
+                  <!-- <li>Os metadados que compõem o catálogo devem seguir o <a href="https://inde.gov.br/pdf/liv101802.pdf" target="_blank">perfil de Metadados Brasileiro – MGB.</a></li> -->
+                </ul>
+              </div> <!-- end lista-sumario  -->
+            </details>
+          </div> <!-- end sumario  -->
+
+        </div> <!-- end wrap-aBtn -->
+      </div> <!-- end section  -->
+    </section>
+
+    <section>
+      <div class="section">
+        <div class="wrap-legislacao">
+          <div class="sumario">
+            <!-- <details>
+              <summary>Legislação</summary> -->
+              <div class="lista-sumario">
+                <ul>
+                  <li><a href="./assets/docs/Decreto 40.554 Institui a IDF-DF 24-03-2020.pdf" target="_blank">DECRETO Nº 40.554, DE 23 DE MARÇO DE 2020</a> - Dispõe sobre a instituição da Infraestrutura de Dados Espaciais do Distrito Federal – IDE/DF e dá outras providências.</li>
+
+                  <li><a href="./assets/docs/PORTARIA_N__71__DE_24_DE_AGOSTO_DE_2020.pdf" target="_blank">PORTARIA Nº 64, DE 28 DE JULHO DE 2020</a> - Dispõe sobre a composição do Comitê
+                    Gestor da Estrutura Executivada Infraestrutura de Dados Espaciais do Distrito Federal – IDE/DF, instituído
+                    por meio do Decreto nº 40.554, de 23 de março de 2020. Alterada pela PORTARIA Nº 71, DE 24 DE AGOSTO
+                    DE 2020.</li>
+
+                  <li><a href="./assets/docs/RESOLUO N 1 - Regimento Interno CGIDE.pdf" target="_blank">RESOLUÇÃO Nº 01, DE 17 DE SETEMBRO DE 2021</a>, - Aprova o Regimento Interno do Comitê Gestor da Estrutura Executiva
+                    Infraestrutura de Dados Espaciais do Distrito Federal – IDE/DF.</li>
+
+                  <li><a href="./assets/docs/RESOLUO N 2 - Criao GT Imagens.pdf" target="_blank">RESOLUÇÃO Nº 02, 17 DE SETEMBRO DE 2021</a>, publicada no DODF nº 197, de 20 Dispôe sobre a criação do grupo técnico executivo de organização de imagens aéreas do território do distrito federal, no âmbito do comitê gestor da estrutura executiva da infraestrutura de dados espaciais do Distrito Federal</li>
+
+                  <li><a href="./assets/docs/RESOLUO N 3 - ALTERAO COMPOSIO GT.pdf"  target="_blank">RESOLUÇÃO Nº 03, DE 12 DE JANEIRO DE 2022</a> Altera a Resolução nº 02, de 17 de setembro de 2021, publicada no DODF nº 197, de 20
+                  de outubro de 2021, que dispõe sobre a criação do Grupo Técnico Executivo de
+                  Organização de Imagens Aéreas do Território do Distrito Federal, no âmbito do Comitê
+                  Gestor da Estrutura Executiva da Infraestrutura de Dados Espaciais do Distrito Federal – CGIDE-DF </li>
+                </ul>
+
+            <!-- <details>
+              <summary>Legislações substituídas</summary>
+              <ul>
+                <p>Decreto nº 37.612, de 09 de setembro de 2016</p>
+                <li>Decreto nº 37.612, de 09 de setembro de 2016</li>
+              </ul>
+            </details> -->
+
+              </div> <!-- end lista-sumario  -->
+              <div class="wrap-aBtn">
+                  <a class="aBtn"></a>
+                  <a class="aBtn"></a>
+                  <a class="aBtn"></a>
+                  <a class="aBtn"></a>
+                  <a class="aBtn"></a>
+
+                </div>
+            <!-- </details> -->
+          </div>
+        </div> <!-- end wrap-legislacao -->
+      </div>
+    </section>
+
+    <section>
+      <div class="section">
+        <div class="wrap-estrutura-executiva">
+          <div class="sumario">
+            <details>
+              <!-- <summary>Comitê gestor da estrutura executica da IDE-DF</summary> -->
+              <summary>Comitê Gestor da Estrutura Executiva da IDE/DF - CGIDE-DF:</summary>
+                <!-- A Estrutura Executica da IDE/DF é integrado por representantes titulares, e respectivos suplentes indicados
+                pelos seguintes órgãos e entidades do Governo do Distrito Federal: -->
+                <!-- O Comitê Gestor da Estrutura Executiva da IDE/DF é integrado por representantes titulares, e respectivos suplentes indicados pelos seguintes órgãos e entidades do Governo do Distrito Federal: -->
+              <div class="lista-sumario">
+                <ul>
+                <p>Compete ao CGIDE/DF</p>
+                    <li>Deliberar sobre os assuntos que envolvam a Política de Geoinformação e Infraestrutura de Dados Espaciais do Distrito Federal;</li>
+                    <li>Definir e gerenciar as ações necessárias para o alcance dos objetivos da IDE/DF;</li>
+                    <li>Elaborar e revisar periodicamente o seu plano de trabalho, que conterá cronograma e estabelecerá as ações prioritárias para o período;</li>
+                    <li>Analisar as iniciativas setoriais relacionadas a IDE/DF, com vistas à harmonização e à promoção de eficiência e sinergia entre as ações dos órgãos e das entidades públicas;</li>
+                    <li>Elaborar normas técnicas, guias e protocolos específicos para a IDE/DF;</li>
+                    <li>Elaborar e revisar o regimento interno da estrutura executiva da IDE/DF. Art. 9º A Secretaria Executiva da IDE/DF será exercida pela Secretaria de Estado de Desenvolvimento Urbano e Habitação do Distrito Federal - SEDUH.</li>
+
+                  Cabe ao Presidente do Comitê Gestor da IDE/DF instituir Grupos Técnicos Executivos para subsidiar o exercício das competências do Comitê Gestor.
+                </ul>
+
+                <p>Composição:</p>
+                <ul>
+                    <li><span>Secretaria de Estado de Desenvolvimento Urbano e Habitação – SEDUH, que o presidirá:</span>
+                      <br>
+                      Titular: Litz Mary Lima Bainy
+                      <br>
+                      Suplente: Luciano dos Santos
+                    </li>
+
+                    <li><span>Secretaria de Estado de Economia do Distrito Federal - SEEC:</span>
+                    <br>
+                      <text class="SEEC"></text>
+                    </li>
+
+                    <li><span>Secretaria de Estado de Meio Ambiente - SEMA:</span>
+                      <br>
+                      Titular: Rogério Alves Barbosa Da Silva
+                      <br>
+                      Suplente: Jéssica de Melo Rodrigues
+                    </li>
+
+                    <li><span>Companhia Imobiliária de Brasília - TERRACAP:</span>
+                      <br>
+                      Titular: Vitor Hugo Santos Da Silva
+                      <br>
+                      Suplente: Ana Luiza Noce Cerdeira
+                    </li>
+
+                    <li><span>Companhia de Saneamento Ambiental do Distrito Federal - CAESB: </span>
+                      <br>
+                      Titular: Carlos Eduardo Machado Pires
+                      <br>
+                      Suplente: Roberto Souza Borges
+                    </li>
+
+                    <li><span>Instituto do Meio Ambiente e dos Recursos Hídricos do Distrito Federal - Brasília Ambiental:</span>
+                      <br>
+                       Titular: Tatiane Eugênia Rezende Correia
+                      <br>
+                      Suplente: Guilhermino Silveira Rocha
+                    </li>
+
+                    <li><span>Agência Reguladora de Águas e Saneamento Básico do DF – ADASA: </span>
+                      <br>
+                      Titular: Geraldo Alves Barcellos
+                      <br>
+                      Suplente: Leonardo Matos de Souza
+                    </li>
+                <!-- </ul> -->
+                  É facultado ao Comitê Gestor da IDE/DF convidar representantes de entidades públicas federais, estaduais
+                  e municipais para comporem o comitê e ou participarem de suas atividades e subsidiar suas deliberações.
+                </ul>
+
+              </div> <!-- end lista-sumario  -->
+
+            </details>
+          </div> <!-- end sumario  -->
+
+          <div class="sumario">
+            <details>
+              <summary>Secretaria Executiva IDE/DF</summary>
+              <div class="lista-sumario">
+                <ul>
+                <p>Compete à Secretaria Executiva da IDE/DF:</p>
+                    <li>examinar e instruir os processos e matérias tramitados no Comitê e nos Grupos Técnicos Executivos;</li>
+                    <li>preparar, antecipadamente, as reuniões de temas previamente aprovados, preparação de informes, remessas de materiais aos membros do Comitê Gestor;</li>
+                    <li>elaborar atos convocatórios para as reuniões, por determinação do Comitê Gestor;</li>
+                    <li>organizar a realização das reuniões tanto do Comitê Gestor quanto dos Grupos Técnicos;</li>
+                    <li>assessorar os membros do Comitê Gestor e dos Grupos Técnicos e as reuniões;</li>
+                    <li>elaborar e lavrar as respectivas atas, deliberações, decisões e todas as documentações do Comitê Gestor e Grupos Técnicos; e</li>
+                    <li>praticar todos os atos administrativos indispensáveis à organização da estrutura executiva da IDE/DF</li>
+                </ul>
+
+                <p>Composição</p>
+                <ul>
+                  <span>Secretaria de Estado de Desenvolvimento Urbano e Habitação – SEDUH</span>
+                  <br>
+                  <text class="secExIDE"></text>
+                </ul>
+
+              </div> <!-- end lista-sumario  -->
+            </details>
+          </div> <!-- end sumario  -->
+
+          <div class="sumario">
+            <details>
+              <summary>Grupo Técnico Executivo de Organização de Imagens aéreas do DF</summary>
+              <div class="lista-sumario">
+              <span>Marco Legal: </span>Instituído pela Resolução nº 2 do CGIDE/DF.
+              <br>
+              <br>
+              <span>Objetivo:</span> identificar as imagens de satélite, fotografias aéreas,
+                  nuvens de pontos e outros arquivos matriciais relacionados existentes
+                  nos diferentes órgãos do Governo do Distrito Federal, centralizá-los
+                  em um repositório digital e disponibilizá-las no âmbito da IDE/DF.
+
+                <p>Atribuições</p>
+                  <ul>
+                    <li>Levantar, junto aos órgãos do Governo do Distrito Federal, a existência de imagens de satélite, fotografias aéreas, nuvens de pontos e outros arquivos matriciais relacionados do território do Distrito Federal, de qualquer data;</li>
+                    <li>Definir local de armazenamento do repositório de imagens da IDE/DF;</li>
+                    <li>Especificar os requisitos de hardware e software necessários para o servidor de imagens;</li>
+                    <li>Definir procedimentos para a inclusão e disponibilização dos dados;</li>
+                    <li>Definir o padrão de armazenamento do repositório de imagens da IDE/DF;</li>
+                    <li>Definir o padrão de compartilhamento via serviços web, bem como os procedimentos de acesso dos dados brutos para análises e processamentos;</li>
+                    <li>Propor metodologia de gestão de conteúdo e de perfis de acesso a ser executada pelo órgão responsável pelos servidores de imagens.</li>
+                  </ul>
+
+                  <ul>
+                  <p>Composição:</p>
+                      <li>
+                        <p>Secretaria de Estado de Desenvolvimento Urbano e Habitação - SEDUH:</p>
+                        - Tânia Maria Vieira da Silva, como titular;
+                        <br>
+                        - Gessica Chaves Ferreira
+                      </li>
+                      <li>
+                        <p>Secretaria de Estado de Economia do Distrito Federal - SEEC</p>
+                        <text class="SEEC"></text>
+                      </li>
+                      <li>
+                        <p>Secretaria de Estado de Meio Ambiente - SEMA</p>
+                        - Mariana Santos da Silva, matrícula n° 275.145-3, como titular;
+                        <br>
+                        - Jéssica de Melo Rodrigues, matrícula n° 273.936-4, como suplente;
+                      </li>
+                      <li>
+                        <p>Agência Reguladora de Águas e Saneamento Básico do DF - (ADASA)</p>
+                        - Geraldo Alves Barcellos, matrícula n° 172.491-6, como titular;
+                        <br>
+                        - Welber Ferreira Alves, matrícula n° 198.239-7, como suplente;
+                      </li>
+                      <li>
+                        <p>Companhia Imobiliária de Brasília - TERRACAP</p>
+                        - Thiago dos Santos Nascimento, matrícula n° 2375-2, como titular;
+                        <br>
+                        - Ana Luiza Noce Cerdeira, matrícula n° 2789-8, como suplente;
+                      </li>
+                      <li>
+                        <p>Companhia de Saneamento Ambiental do Distrito Federa - CAESB</p>
+                        - Roberto Souza Borges, matrícula n° 53350-5, como titular;
+                        <br>
+                        - Carlos Eduardo Machado Pires, matrícula n° 51721-6, como suplente;
+                      </li>
+                      <li>
+                        <p>Instituto do Meio Ambiente e dos Recursos Hídricos do Distrito Federal - Brasília Ambiental</p>
+                        - Guilhermino Silveira Rocha, matrícula n° 1689533-9, como titular;
+                        <br>
+                        - Luiz Antônio de Souza Aguiar, matrícula n° 264678-1, como suplente;
+                      </li>
+                  </ul>
+
+              </div> <!-- end lista-sumario  -->
+            </details>
+          </div> <!-- end sumario  -->
+
+          <div class="sumario">
+            <details>
+              <summary>Reuniões do CGIDE-DF</summary>
+              <div class="lista-sumario">
+
+                <!-- <p>Integrantes:</p>
+
+                <span>Atribuições</span> -->
+
+              </div> <!-- end lista-sumario  -->
+
+
+                <!-- <p>Reuniões</p> -->
+                <details>
+                  <summary>1ª Reunião Ordinária - 20/08/2020</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                    <ul>
+                      <li>Abertura dos trabalhos Secretária Executiva da SEDUH, Giselle Moll   </li>
+                      <li>Introdução: Estrutura Executiva da IDE/DF  </li>
+                      <li>Apresentação da situação atual da Infraestrutura de Dados Espaciais do DF</li>
+                      <li>Resumo sobre as reuniões sobre Geoprocessamento no GDF (Processo SEI 00040-00001906/2020-54) </li>
+                      <li>Definição do funcionamento do Comitê Gestor da Estrutura Executiva da IDE/DF e Regimento. </li>
+                    </ul>
+
+                    <ul>
+                      <span>ATA das reuniões</span>
+                        <li><a href="./assets/docs/SEI_GDF - 46748510 - Ata 1 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 03/08/2021</li>
+                    </ul>
+                  </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+
+                </details>
+
+                <details>
+                  <summary>2ª Reunião Ordinária - 16/09/2020</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                    <ul>
+                      <li>Apresentação da INDE pelo IBGE, representado por Rogério Borba e Luis Bahia, gestores operacionais e administrativos da INDE.</li>
+                    </ul>
+
+                    <ul>
+                      <span>ATA das reuniões</span>
+                        <li><a href="./assets/docs/SEI_GDF - 46748510 - Ata 2 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 16/09/2021</li>
+                    </ul>
+                  </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+
+                </details>
+
+                <details>
+                  <summary>3ª Reunião Ordinária - 25/09/2020</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>Elaboração de proposta de minuta do Regimento interno do CGIDE/DF </li>
+                        <li>Criação de Grupos Técnicos Executivos.</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 48478770 - Ata 3 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 25/09/2021</li>
+                      </ul>
+
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>4ª Reunião Ordinária - 02/10/2020</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>1.	Análise da minuta da primeira versão do Regimento do CGIDE/DF.</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 48479369 - Ata 4 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 02/10/2020</li>
+                      </ul>
+
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>5ª Reunião Ordinária - 16/10/2020</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>Aprovação do Regimento do CGIDE/DF; </li>
+                        <li>Propostas de Grupos Técnicos Executivos.</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 49427001 - Ata 5 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 16/10/2021</li>
+                      </ul>
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>6ª Reunião Ordinária - 19/11/2020</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>1.	Definição quanto a forma de adesão dos órgãos do GDF ao Programa Brasil Mais</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 49427001 - Ata 6 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 19/11/2021</li>
+                      </ul>
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>7ª Reunião Ordinária - 26/11/2020</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>Apresentação ao Comitê Gestor do PROGRAMA BRASIL MAIS e a Coordenação Geral de Gestão e Governança de TIC, do Ministério da Justiça, de listagem das bases de dados disponíveis pelos órgãos do GDF que integram o Comitê CGIDE/DF, para contrapartida com vistas à adesão ao Programa Brasil Mais (Cristiano Cunha, Coordenador do Comitê Gestor do PROGRAMA BRASIL MAIS, da Polícia Federal e de Hélvio Peixoto, Coordenador-Geral de Gestão e Governança de TIC, da Diretoria de Tecnologia de Informação e Comunicação, do Ministério da Justiça e Segurança Pública.)</li>
+                        <li>Definição da composição do Grupo Técnico Executivo de Organização de Imagens de Satélites do Distrito Federal</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 49427001 - Ata 7 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 36/11/2020</li>
+                      </ul>
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>8ª Reunião Ordinária - 05/04/2021</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>Apresentação, pela SEDUH, da proposta de atualização cartográfica contínua com o objetivo de implantação e manutenção do Cadastro Territorial Multifinalitário, encaminhada à SEEC para obtenção de recursos junto ao PNAFM</li>
+                        <li>Retorno as tratativas, junto à Secretaria de Economia –SEE/DF, acerca da aquisição de licenciamento ESRI para o GDF</li>
+                        <li>Criação de Grupo para tratativas junto ao SERVIÇO FLORESTAL BRASILEIRO - SFB de base de dados a serem produzidos para o CAR (relevo, hidrografia, uso e cobertura do solo e servidão administrativa)</li>
+                        <li>Grupo Técnico Executivo de Organização de Imagens de Satélites do Distrito Federal</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 49427001 - Ata 8 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 05/04/2021</li>
+                      </ul>
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>9ª Reunião Ordinária - 08/07/2021</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>Apresentação dos indicados para compor o GT de Imagens;</li>
+                        <li>Definição das diretrizes de trabalho para o GT; </li>
+                        <li>Forma de Adesão à IDE/DF.</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 49427001 - Ata 8 Reunio Ordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 08/07/2021</li>
+                      </ul>
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>1ª Reunião Extraordinária - 23/09/2021</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>Apresentar as considerações feitas pela Assessoria Jurídico Legislativa - AJL/SEDUH, na Nota Jurídica nº 267/2021, que estabelece a inclusão, no Regimento Interno do Comitê, do tipo de ato administrativo quando da necessidade de publicação das deliberações do Comitê</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 70676676 - Ata 1 Reunio Extraordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 23/09/2021</li>
+                      </ul>
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+                <details>
+                  <summary>10ª Reunião Ordinária - 01/02/2022</summary>
+                    <div class="lista-sumario">
+
+                    <p>PAUTA</p>
+                      <ul>
+                        <li>Apresentação UnB – Banco de dados de imagens panopticas</li>
+                        <li>Apresentação do status atual do Relatório do GT de imagens</li>
+                      </ul>
+
+                      <ul>
+                        <li><a href="./assets/docs/SEI_GDF - 70676676 - Ata 1 Reunio Extraordinria.pdf" target="_blank" rel="noopener noreferrer">ATA</a> - Reunião 01/02/2022</li>
+                      </ul>
+                    </div> <!-- end lista-sumario  -->
+
+                    <div class="wrap-aBtn">
+                      <a class="aBtn"></a>
+                    </div> <!-- end wrap-aBtn  -->
+                </details>
+
+
+            </details>
+          </div> <!-- end sumario  -->
+
+        </div> <!-- end wrap-comite -->
+      </div> <!-- end section -->
+    </section>
+
+    <section>
+      <div class="section">
+        <div class="wrap-grupo_tecnico">
+          <div class="sumario">
+              <details open>
+                <summary>GTE DE ORGANIZAÇÃO DE IMAGENS AÉREAS DO TERRITÓRIO DO DF</summary>
+              <div class="lista-sumario">
+                Instituído pela <a href="./assets/docs/RESOLUO N 2 - Criao GT Imagens.pdf" download="Criação GT imagens">RESOLUÇÃO Nº 02</a>, de 12 de setembro de 2021, publicada no DODF nº 197, de 20,
+                alterada pela <a href="./assets/docs/RESOLUO N 3 - ALTERAO COMPOSIO GT.pdf" download="Alteração GT">RESOLUÇÃO Nº 03</a>, de 12 de janeiro de 2022, publicada no DODF nº 197, de 20 de outubro de 2021.
+
+                  <p>OBJETIVO:</p>
+                  Identificar, organizar e disponibilizar todo o acervo de imagens de satélite, fotografias aéreas,
+                  nuvens de pontos e outros arquivos matriciais relacionados existentes nos diferentes órgãos
+                  do Governo do Distrito Federal em um repositório digital unificado.
+
+                <ul>
+                  <p>COMPOSIÇÃO:</p>
+                  <li><span>Secretaria de Estado de Desenvolvimento Urbano e Habitação - SEDUH</span></li>
+                    Leonardo Rodrigues de Deus - titular; <br>
+                    Alexandre Sauma da Silva - suplente;<br><br>
+                  <li><span>Secretaria de Estado de Economia do Distrito Federal - SEEC</span></li>
+                    <text class="SEEC"></text>
+                  <br>
+                  <li><span>Secretaria de Estado de Meio Ambiente - SEMA</span></li>
+                    Mariana Santos da Silva - titular;<br>
+                    Renatto Attiê Lima - suplente;<br><br>
+                  <li><span>Agência Reguladora de Águas e Saneamento - ADASA</span></li>
+                    Geraldo Alves Barcellos - titular;<br>
+                    Welber Ferreira Alves - suplente;<br><br>
+                  <li><span>Companhia Imobiliária de Brasília - TERRACAP</span></li>
+                    Thiago dos Santos Nascimento - titular; (coordenador)<br>
+                    Ana luiza Noce Cerdeira, como suplente;<br><br>
+                  <li><span>Companhia de Saneamento Ambiental do Distrito Federal - CAESB</span></li>
+                    Roberto Souza Borges - titular;<br>
+                    Carlos Eduardo Machado Pires - suplente;<br><br>
+                  <li><span> Instituto do Meio Ambiente e dos Recursos Hídricos do Distrito Federal – Brasília Ambiental</span></li>
+                    Guilhermino Silveira Rocha - titular<br>
+                    Luiz Antonio de Souza Aguiar - suplente<br><br>
+                </ul>
+
+                <ul>
+                  <p>COMPOSIÇÃO:</p>
+
+                  <li>Levantar, junto aos órgãos do Governo do Distrito Federal, a existência de imagens de
+                  satélite, fotografias aéreas, nuvens de pontos e outros arquivos matriciais relacionados
+                  do território do Distrito Federal, de qualquer data;</li>
+                  <li>Definir local de armazenamento do repositório de imagens da IDE/DF;</li>
+                  <li>Especificar os requisitos de hardware e software necessários para o servidor de imagens;</li>
+
+                  <li>Definir procedimentos para a inclusão e disponibilização dos dados;</li>
+                  <li>Definir o padrão de armazenamento do repositório de imagens da IDE/DF;</li>
+                  <li>Definir o padrão de compartilhamento via serviços web, bem como os procedimentos
+                  de acesso dos dados brutos para análises e processamentos;</li>
+                  <li>Propor metodologia de gestão de conteúdo e de perfis de acesso a ser executada pelo
+                  órgão responsável pelos servidores de imagens Infraestrutura de Dados Espaciais do
+                  Distrito Federal – CGIDE-DF.</li>
+                </ul>
+
+
+                <div class="btn-a">
+                  <p>Relatorio Final Grupo Técnico Executivo</p>
+                  <a href="./assets/docs/Grupo técnico executivo/Relatorio_Final_Grupo Técnico Executivo.pdf" download="Relatorio_Final_Grupo Técnico Executivo.pdf">Download PDF</a>
+                </div>
+
+            </div> <!-- end lista-sumario  -->
+              </details>
+          </div> <!-- end sumario  -->
+        </div> <!-- end wrap-contato  -->
+      </div> <!-- end section  -->
+    </section>
+
+    <section>
+      <div class="section">
+        <div class="wrap-capacitacao">
+          <div class="sumario">
+            <div class="lista-sumario">
+
+            <p>TREINAMENTOS PARA UTILIZAÇÃO DO GEOPORTAL</p>
+            O Geoportal disponibiliza uma aplicação para cadastramento das pessoas interessadas em receber treinamento para utilização do Geoportal.
+            <br>
+            Os cursos são ministrados remotamente, usualmente as quartas-feiras, sempre que houver 30 pessoas cadastradas. Os alunos receberão no e-mail o link para a sala com a data e horário do curso
+            <br><br>
+            <span>Dúvidas sobre o treinamento:</span>
+            <br>
+            <span>E-mail:</span> digeo@seduh.df.gov.br
+            <br>
+            <span>Telefone:</span> 3214-4106
+            </div> <!-- end lista-sumario  -->
+
+            <p>Link para cadastramento:</p>
+            <div class="wrap-form">
+            <!-- <h3>Para participar do treinamento, preencha o formulário abaixo:</h3>
+
+                <form id="form" class="form">
+                  <label for="name">Nome:</label>
+                  <input type="text" id="name" placeholder="Nome completo" maxlength="50" autocomplete="off" required/>
+
+                  <label for="email">E-mail:</label>
+                  <input type="text" id="email" placeholder="E-mail" maxlength="50" autocomplete="off" required/>
+
+                  <label for="email">Instituição:</label>
+                  <input type="text" id="instt" placeholder="Instituição" maxlength="30" required/>
+
+                  <input id="fsub" type="submit" value="Submit">
+                </form>
+
+                <div class="mensagem"><p></p></div>
+                -->
+                <a href="https://www.ide.df.gov.br/treinamentos/" target="_blank">https://www.ide.df.gov.br/treinamentos</a>
+            </div> <!----end wrap-form  -->
+
+            <!-- <details>
+              <summary>Capacitação</summary> -->
+              <div class="lista-sumario">
+            <p>CAPACITAÇÂO PARA ADESÃO À IDE/DF</p>
+              Os órgãos do Distrito Federal cujas atividades estejam relacionadas com geoinformações e informações espacializáveis e que não possuam estrutura de geoprocessamento podem solicitar ao Comitê Gestor da Estrutura Executiva da IDE/DF suporte quanto ao tratamento e disponibilização dessas informações.
+          </div> <!-- end lista-sumario  -->
+            <!-- </details> -->
+          </div> <!-- end sumario  -->
+        </div> <!-- end wrap-capacitação  -->
+      </div> <!-- end section  -->
+    </section>
+
+    <section>
+      <div class="section">
+        <div class="wrap-adesao">
+          <div class="sumario">
+          <!-- <div class="lista-sumario"> -->
+            <!-- <details>
+              <summary>Capacitação</summary> -->
+            <div class="lista-sumario">
+
+              <p>PROCEDIMENTOS PARA ADESÃO À INFRAESTRUTURA DE DADOS ESPACIAIS DO DISTRITO FEDERAL - IDE</p>
+
+              Para adesão à IDE/DF deverá ser preenchido o modelo de documento “<a href="./assets/docs/Proposta_Modelo_Termo_Adesao_IDEDF.doc" target="_blank">Termo de Adesão à Infraestrutura de Dados Espaciais do Distrito Federal”</a>, disponível no SEI, com as informações solicitadas e encaminha-lo pelo Sistema Eletrônico de Informações (SEI) à Unidade SEI SEDUH/GAB/IDE-DF
+
+              <p>Modalidades de adesão a IDE/DF:</p>
+
+                São duas as modalidades de adesão à IDE/DF:
+
+                <div class="nosAdesao">
+                  <div class="Box_noAdesao">
+                <!-- <details>
+                  <summary>Adesão ao Nó Central</summary> -->
+                  <!-- <a href="./assets/docs/Grupo técnico executivo/Modelo_Termo_Adesao_Modalidade Nó Central_IDEDF.docx" download="Modelo Adesão ao Nó Central">Download do modelo</a> -->
+                  <img src="./assets/docs/Grupo técnico executivo/print nó central.png" alt="">
+                <!-- </details> -->
+                </div>
+
+                <div class="Box_noAdesao">
+                <!-- <details>
+                  <summary>Adesão com Nó Próprio</summary> -->
+                  <!-- <a href="./assets/docs/Grupo técnico executivo/Modelo_Termo_Adesao_Modalidade Nó Próprio_IDEDF.docx" download="Modelo Adesão ao Nó Central">Download do modelo</a> -->
+                  <img src="./assets/docs/Grupo técnico executivo/print nó próprio.png" alt="">
+                <!-- </details> -->
+                </div>
+                </div><!-- end div adesão nós -->
+              <!-- <ul>
+                <li>Uso de infraestrutura própria, <b>Modalidade Nó Próprio</b> - quando o Órgão dispõe da infraestrutura necessária para ingressar e compartilhar seus dados geoespaciais na IDE/DF (hardware, software, equipe técnica para executar os procedimentos e manter os sistemas, etc.</li>
+                <li>Uso de infraestrutura da IDE/DF, nos termos do art. 15º do <a href="./assets/docs/Decreto 40.554 Institui a IDF-DF 24-03-2020.pdf" target="_blank">Decreto 40.554, de 23 de março de 2020</a>, <b>Modalidade Nó Central</b> - quando o Órgão não possui infraestrutura própria para disponibilizar seus dados geoespaciais.</li>
+              </ul> -->
+
+                <!-- Ao preencher o Termo de Adesão, o representante do Órgão deverá indicar a modalidade de adesão de escolha da instituição requerente.
+                <br>
+                Caso necessário, o representante do Órgão poderá entrar em contato com o Comitê Gestor da Estrutura Executiva da IDE/DF para obter orientação na escolha da modalidade de adesão mais adequada e uma avaliação das suas necessidades específicas de capacitação e suporte.
+                <br>
+                Em ambas as modalidades, Nó Central e Nó Próprio, tanto os dados geoespaciais quanto os geoserviços e respectivos metadados devem seguir padrão a ser especificado pela IDE/DF. -->
+
+                  <p>Passos seguintes à adesão</p>
+                  Após envio do <a href="./assets/docs/Grupo técnico executivo/Relatorio_Final_Grupo Técnico Executivo.pdf" download="Proposta modelo Termo de Adesão IDE/DF.pdf">Termo de Adesão</a> preenchido e assinado, o Órgão:
+                  <br>
+                <ul>
+                  <li>Deverá, caso a adesão seja pela modalidade Nó Próprio, dispor de seus dados geoespaciais nas normas e padrões exigidos pela IDE/DF e enviar o link do seu catálogo de metadados geoespaciais e o link do seu catálogo de geoserviços.</li>
+                  <li>Deverá, caso a adesão seja pela modalidade Nó Central, disponibilizar os dados espaciais e respectivos metadados à IDE/DF para que sejam compartilhados no Geoportal/DF.</li>
+                  <li>Todo o encaminhamento de dados para inclusão na IDE/DF deverá ser realizado por meio do mesmo Processo SEI utilizado para a Adesão. Na modalidade Nó Central, compete à IDE/DF administrar e manter os dados de cada Órgão disponíveis no Geoportal/DF, cabendo ao Órgão disponibilizar à IDE/DF novas versão dos seus dados e metadados, sempre que estes sofrerem atualização.</li>
+                </ul>
+
+                Na modalidade Nó Central, compete ao Órgão encaminhar os dados geoespaciais via processo SEI seguindo as especificações definidas pelo Comitê Gestor da Estrutura Executiva da Infraestrutura de Dados Espaciais do Distrito Federal - CGIDE/DF.
+                <br><br>
+                O CGIDE/DF consultará, anualmente, todos os órgãos que optaram pela modalidade Nó Central, para que seja confirmado que a informação publicada está devidamente atualizada.
+
+                <p style="text-align: center;">Capacitação do Órgão para adesão a IDE/DF</p>
+
+                  Caso pertinente, o Comitê Gestor da Estrutura Executiva da IDE/DF oferecerá treinamento necessário para que a equipe técnica do Órgão esteja em condições de realizar as ações de compartilhamento de seus dados. Basicamente, o conteúdo do treinamento poderá cobrir a totalidade ou parte dos seguintes tópicos:
+
+                <ul>
+                  <li>Infraestruturas de Dados Espaciais;</li>
+                  <li>Ferramentas de geoservicos;</li>
+                  <li>Geoportal e Portal da IDE/DF</li>
+                </ul>
+
+                  A equipe responsável pela IDE/DF estará à disposição para uma reunião prévia de esclarecimentos e orientação visando:
+
+                  <ul>
+                  <li>Avaliar a modalidade de adesão mais apropriada para o Órgão;</li>
+                  <li>Analisar a infraestrutura de TIC do Órgão para implantar o seu Nó na IDE/DF;</li>
+                  <li>Analisar as necessidades específicas de treinamento do Órgão</li>
+                  </ul>
+              <!-- </details> -->
+            </div>
+          </div> <!-- end sumario  -->
+
+          <div class="wrap-aBtn">
+            <a class="aBtn"></a>
+            <a class="aBtn"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section">
+        <div class="wrap-dadosDisponiveis">
+          <div class="orgaos-participantes">
+            <!-- <div class="hr"></div> -->
+            <!-- <span>Órgãos Participantes</span> -->
+                <p>Órgãos Participantes</p>
+
+            <div class="wrap-apoio">
+              <div class="apoio"> <img src="./assets/logo/caesb.png" alt="CAESB"> </div>
+              <div class="apoio"> <img src="./assets/logo/brasilia-ambiental.jpg" alt="BRASÍLIA AMBIENTAL"> </div>
+              <div class="apoio"> <img src="./assets/logo/detran.jpg" alt="DETRAN"> </div>
+              <div class="apoio"> <img src="./assets/logo/jucis.jpg" alt="JUCIS"> </div>
+              <div class="apoio"> <img src="./assets/logo/ouvidoria.png" alt="OUVIDORIA"> </div>
+              <div class="apoio"> <img src="./assets/logo/sebrae.jpg" alt="SEBRAE"> </div>
+              <div class="apoio"> <img src="./assets/logo/slu.jpg" alt="SLU"> </div>
+              <div class="apoio"> <img src="./assets/logo/terracap.jpg" alt="TERRACAP"> </div>
+              <div class="apoio"> <img src="./assets/logo/semob.png" alt="SEMOB"> </div>
+              <div class="apoio"> <img src="./assets/logo/sema.png" alt="SEMA"> </div>
+              <div class="apoio"> <img src="./assets/logo/SEAGRI.png" alt="SEAGRI"> </div>
+              <div class="apoio"> <img src="./assets/logo/sisdia.png" alt="SISDIA"> </div>
+              <div class="apoio"> <img src="./assets/logo/bombeiros-df.png" alt="BOMBEIROS"> </div>
+            </div> <!-- wrap-apoio -->
+        </div> <!-- orgaos-participantes -->
+          <div class="sumario">
+            <div class="lista-sumario">
+
+              <div class="wrap_search">
+                <!-- <p>Dados disponibilizados </p> -->
+
+                <div class="search">
+
+                  <div class="searchBtnClear">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000" style="display: block;"><path d="M0 0h24v24H0z" fill="none"></path><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg> -->
+
+                    <!-- Limpar -->
+
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-3 12.59L17.59 17 14 13.41 10.41 17 9 15.59 12.59 12 9 8.41 10.41 7 14 10.59 17.59 7 19 8.41 15.41 12 19 15.59z"></path> </svg>
+                    </div>
+
+                  <input type="text" placeholder="Pesquisa" maxlength="35" autocomplete="on"/>
+
+                  <div class="svgSearch">
+                    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 24 24" height="24px" width="24px" fill=""><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  </div>
+
+                </div>
+              </div>
+
+              <div id="build2"></div>
+
+              <div id="build"></div>
+
+            </div> <!-- end lista-sumario  -->
+          </div> <!-- end sumario  -->
+        </div> <!-- end wrap-participantes  -->
+      </div> <!-- end section  -->
+    </section>
+
+  </div> <!-- container -->
+
+  <footer>
+
+    <div class="wrap-footer">
+
+      <div>
+        <h3>Portal IDE/DF</h3>
+        <p>A Infraestrutura de Dados Espaciais do Distrito Federal - IDE/DF abrange o conjunto de tecnologias, políticas, padrões e recursos humanos necessários para adquirir, processar, consolidar, distribuir, utilizar, manter e preservar a geoinformação produzida no âmbito do Distrito Federal</p>
+
+        <br>
+
+        <!-- <h5>Geoportal</h5>
+        <p>• texto</p> -->
+      </div>
+
+      <div>
+        <h3>Participantes</h3>
+        <h5>Site:</h5>
+        <a href="https://www.ibram.df.gov.br/" target="_blank"><h5>• Brasília Ambiental</h5></a>
+        <a href="https://www.caesb.df.gov.br/" target="_blank"><h5>• Caesb</h5> </a>
+        <a href="https://www.cbm.df.gov.br/" target="_blank"><h5>• CBMDF</h5></a>
+        <a href="http://www.detran.df.gov.br/" target="_blank"><h5>• Detran</h5></a>
+        <a href="https://jucis.df.gov.br/" target="_blank"><h5>• Jucis DF</h5></a>
+        <a href="https://ouvidoria.df.gov.br/" target="_blank"><h5>• Ouvidoria</h5></a>
+        <a href="https://www.agricultura.df.gov.br/" target="_blank"><h5>• Seagri</h5></a>
+        <a href="https://sebrae.com.br/sites/PortalSebrae" target="_blank"><h5>• Sebrae</h5></a>
+        <a href="https://sisdia.df.gov.br/home/" target="_blank"><h5>• Sisdia</h5></a>
+        <a href="https://slu.df.gov.br/" target="_blank"><h5>• SLU</h5></a>
+        <a href="https://www.sema.df.gov.br/" target="_blank"><h5>• Sema</h5></a>
+        <a href="https://semob.df.gov.br/" target="_blank"><h5>• Semob</h5></a>
+        <a href="https://www.terracap.df.gov.br/" target="_blank"><h5>• Terracap</h5></a>
+      </div>
+
+      <div>
+        <h3>Alguma dúvida? Entre em contato!</h3>
+        <h5>Telefone para contato:</h5>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0z" fill="none"/><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+        <p>(61) 3214-4117</p>
+        <br>
+        <h5>E-mail para contato:</h5>
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <p>contato@ide.gov.br</p>
+      </div>
+
+    </div><!-- end wrap-footer -->
+
+        <br><br>
+        <p>Infraestrutura de Dados Espaciais do Distrito Federal IDE/DF - Copyright © 2022 Equipe IDE/DF</p>
+
+    <!-- <div class="wrap-location">
+
+      <div class="svgLocation">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+      </div>
+
+    </div> -->
+
+  </footer>
+
+  <!-- <py-script src="/py/py-script.py"> </py-script> -->
+  <script defer type="module" src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+stages:
+  - staging-deploy
+  - staging-build
+  - production-deploy
+  - production-build
+
+Subindo_ambiente_de_teste:
+  tags:
+    - homolog
+  stage: staging-deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: Teste
+    url: http://10.233.34.41
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop"
+    - if: $CI_COMMIT_BRANCH == "develop"
+
+instalar_dependencias_de_teste:
+  tags:
+    - homolog
+  stage: staging-build
+  script:
+    - if (Test-Path -Path C:\inetpub\wwwroot\$CI_PROJECT_NAME) {
+        cd C:\inetpub\wwwroot\$CI_PROJECT_NAME;
+        dir;
+        git config --global --add safe.directory 'C:\inetpub\wwwroot\$CI_PROJECT_NAME';
+        git config --global --add safe.directory '*';
+        git pull http://10.233.34.52/seduh/digeo-seduh/$CI_PROJECT_NAME.git develop
+      } else {
+        cd C:\inetpub\wwwroot;
+        git clone http://10.233.34.52/seduh/digeo-seduh/$CI_PROJECT_NAME.git;
+        cd $CI_PROJECT_NAME;
+        git config --global --add safe.directory 'C:\inetpub\wwwroot\$CI_PROJECT_NAME';
+        git config --global --add safe.directory '*';
+        git fetch --all;
+        dir;
+        git checkout develop;
+        git pull http://10.233.34.52/seduh/digeo-seduh/$CI_PROJECT_NAME.git develop;
+      }
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop"
+    - if: $CI_COMMIT_BRANCH == "develop"
+
+Subindo_ambiente_de_producao:
+  tags:
+    - prod
+  stage: production-deploy
+  script:
+    - echo "Deploy to production server"
+  environment:
+    name: Producao
+    url: http://10.233.34.50
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    - if: $CI_COMMIT_BRANCH == "main"
+
+instalar_dependencias_de_producao:
+  tags:
+    - prod
+  stage: production-build
+  script:
+    - cd C:\inetpub\wwwroot;
+    - if (git rev-parse --is-inside-work-tree) {
+        git config --global --add safe.directory 'C:\inetpub\wwwroot';
+        git config --global --add safe.directory '*';
+        git pull http://10.233.34.52/seduh/digeo-seduh/$CI_PROJECT_NAME.git main;        
+      } else {
+        git clone http://10.233.34.52/seduh/digeo-seduh/$CI_PROJECT_NAME.git;
+        mv -Force C:\inetpub\wwwroot\$CI_PROJECT_NAME\* C:\inetpub\wwwroot\;
+        mv -Force C:\inetpub\wwwroot\$CI_PROJECT_NAME\.git C:\inetpub\wwwroot\;
+        git config --global --add safe.directory 'C:\inetpub\wwwroot\';
+        git config --global --add safe.directory '*';
+      }
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+    - if: $CI_COMMIT_BRANCH == "main"
+
